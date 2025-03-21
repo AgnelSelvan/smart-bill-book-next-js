@@ -43,7 +43,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-gray-50">
           <motion.div
-            className="fixed top-0 left-0 right-0 h-1 bg-primary origin-left z-50"
+            className="fixed top-0 left-0 right-0 h-1 bg-[#fd8d00] origin-left z-50"
             style={{ scaleX }}
           />
           {/* Hero Section */}
@@ -61,12 +61,12 @@ export default function Home() {
                   >
                     Features
                   </button>
-                  <button
+                  {/* <button
                     onClick={() => scrollToSection('pricing')}
                     className="text-gray-600 hover:text-primary transition-colors"
                   >
                     Pricing
-                  </button>
+                  </button> */}
                   {/* <button
                     onClick={() => scrollToSection('testimonials')}
                     className="text-gray-600 hover:text-primary transition-colors"
@@ -203,7 +203,7 @@ export default function Home() {
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <div className="bg-primary/10 p-3 rounded-lg w-fit mb-4">
+                    <div className="bg-[#fd8d00]/10 p-3 rounded-lg w-fit mb-4">
                       {feature.icon}
                     </div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">{feature.title}</h3>
@@ -215,7 +215,7 @@ export default function Home() {
           </section>
 
           {/* Stats Section */}
-          <section className="bg-primary py-20">
+          <section className="bg-[#fd8d00] py-20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid md:grid-cols-3 gap-8 text-white text-center">
                 {[
@@ -233,7 +233,7 @@ export default function Home() {
                   >
                     {stat.icon}
                     <span className="text-4xl font-bold mt-4">{stat.number}</span>
-                    <span className="text-primary-light">{stat.label}</span>
+                    <span className="text-[#ff9f1a]">{stat.label}</span>
                   </motion.div>
                 ))}
               </div>
@@ -241,7 +241,7 @@ export default function Home() {
           </section>
 
           {/* Pricing Section */}
-          <section id="pricing" className="py-20 bg-white">
+          {/* <section id="pricing" className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <motion.div
                 className="text-center mb-16"
@@ -312,12 +312,12 @@ export default function Home() {
                     transition={{ delay: index * 0.1 }}
                   >
                     {plan.popular && (
-                      <div className="absolute top-0 right-0 bg-primary text-white px-4 py-1 rounded-bl-lg text-sm font-medium">
+                      <div className="absolute top-0 right-0 bg-[#fd8d00] text-white px-4 py-1 rounded-bl-lg text-sm font-medium">
                         Most Popular
                       </div>
                     )}
                     <div className={`p-8 text-center transition-colors duration-300 ${
-                      plan.popular ? 'bg-primary group-hover:bg-primary' : 'bg-gray-50 group-hover:bg-primary'
+                      plan.popular ? 'bg-[#fd8d00] group-hover:bg-[#fd8d00]' : 'bg-gray-50 group-hover:bg-[#fd8d00]'
                     }`}>
                       <h3 className={`text-2xl font-bold transition-colors duration-300 ${
                         plan.popular ? 'text-white' : 'text-gray-900 group-hover:text-white'
@@ -356,8 +356,8 @@ export default function Home() {
                           href="#"
                           className={`block w-full py-3 px-6 rounded-lg text-center font-medium transition-all duration-300 ${
                             plan.popular
-                              ? 'bg-primary text-white hover:bg-primary hover:border-2 hover:border-primary'
-                              : 'bg-gray-100 text-gray-900 group-hover:bg-primary group-hover:text-white hover:border-2 hover:border-primary'
+                              ? 'bg-[#fd8d00] text-white hover:bg-[#fd8d00] hover:border-2 hover:border-primary'
+                              : 'bg-gray-100 text-gray-900 group-hover:bg-[#fd8d00] group-hover:text-white hover:border-2 hover:border-primary'
                           }`}
                         >
                           {plan.cta}
@@ -368,7 +368,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-          </section>
+          </section> */}
 
           {/* CTA Section */}
           <section className="py-20">
