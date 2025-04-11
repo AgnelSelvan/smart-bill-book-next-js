@@ -52,7 +52,7 @@ export default function Home() {
               <div className="flex justify-between items-center">
                 <div className="flex items-center">
                   <img src="/logo.png" alt="Smart Bill Book Logo" className="h-8 w-8" />
-                  <span className="ml-2 text-xl font-bold text-gray-900">Smart Bill Book</span>
+                  <span className="hidden ml-2 text-xl font-bold text-gray-900">Smart Bill Book</span>
                 </div>
                 <div className="hidden md:flex space-x-8">
                   <button
@@ -76,14 +76,16 @@ export default function Home() {
                 </div>
                 <div className="flex items-center space-x-4">
                   <a
-                    href="#"
+                    href="https://apps.microsoft.com/detail/9pkxj10brmpk?mode=direct"
+                    target="_blank"
                     className="flex items-center space-x-2 bg-[#0078D4] text-white px-4 py-2 rounded-lg hover:bg-[#006cbd] transition-colors text-sm"
                   >
                     <Download className="h-4 w-4" />
                     <span>Windows</span>
                   </a>
                   <a
-                    href="#"
+                    href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share"
+                    target="_blank"
                     className="flex items-center space-x-2 bg-[#414141] text-white px-4 py-2 rounded-lg hover:bg-[#2d2d2d] transition-colors text-sm"
                   >
                     <Download className="h-4 w-4" />
@@ -110,27 +112,14 @@ export default function Home() {
                   Say goodbye to paper bills. Create, manage, and sync your invoices across all devices with our cloud-based smart billing system.
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                  <a
-                    href="#"
-                    className="flex items-center space-x-3 bg-[#0078D4] text-white px-6 py-4 rounded-lg hover:bg-[#006cbd] transition-colors w-full sm:w-auto justify-center"
-                  >
-                    <Download className="h-6 w-6" />
-                    <div>
-                      <div className="text-xs">Get it from</div>
-                      <div className="text-sm font-semibold">Microsoft Store</div>
-                    </div>
-                  </a>
 
-                  <a
-                    href="#"
-                    className="flex items-center space-x-3 bg-[#414141] text-white px-6 py-4 rounded-lg hover:bg-[#2d2d2d] transition-colors w-full sm:w-auto justify-center"
-                  >
-                    <Download className="h-6 w-6" />
-                    <div>
-                      <div className="text-xs">Get it on</div>
-                      <div className="text-sm font-semibold">Google Play</div>
-                    </div>
-                  </a>
+                    <a href="https://apps.microsoft.com/detail/9pkxj10brmpk?mode=direct" target="_blank">
+                      <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share" target="_blank">
+                      <img src="/google_play.png" width="185"/>
+                    </a>
                 </div>
               </motion.div>
 
@@ -382,27 +371,14 @@ export default function Home() {
                 <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Billing?</h2>
                 <p className="text-xl text-gray-400 mb-8">Join thousands of businesses that trust Smart Bill Book</p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-                  <a
-                    href="#"
-                    className="flex items-center space-x-3 bg-[#0078D4] text-white px-6 py-4 rounded-lg hover:bg-[#006cbd] transition-colors w-full sm:w-auto justify-center"
-                  >
-                    <Download className="h-6 w-6" />
-                    <div>
-                      <div className="text-xs">Get it from</div>
-                      <div className="text-sm font-semibold">Microsoft Store</div>
-                    </div>
-                  </a>
 
-                  <a
-                    href="#"
-                    className="flex items-center space-x-3 bg-[#414141] text-white px-6 py-4 rounded-lg hover:bg-[#2d2d2d] transition-colors w-full sm:w-auto justify-center"
-                  >
-                    <Download className="h-6 w-6" />
-                    <div>
-                      <div className="text-xs">Get it on</div>
-                      <div className="text-sm font-semibold">Google Play</div>
-                    </div>
-                  </a>
+                    <a href="https://apps.microsoft.com/detail/9pkxj10brmpk?mode=direct" target="_blank">
+                      <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+                    </a>
+
+                    <a href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share" target="_blank">
+                      <img src="/google_play.png" width="185"/>
+                    </a>
                 </div>
               </motion.div>
             </div>
