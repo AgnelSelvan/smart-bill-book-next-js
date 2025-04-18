@@ -1,5 +1,5 @@
 "use client"
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring, useTransform } from 'framer-motion';
 import {
   Cloud,
   Receipt,
@@ -17,6 +17,7 @@ import {
   ShoppingCart
 } from 'lucide-react';
 import Link from "next/link";
+import { useState, useEffect } from 'react';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -31,6 +32,38 @@ export default function Home() {
     damping: 30,
     restDelta: 0.001
   });
+
+  const buttonOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
+  const buttonY = useTransform(scrollYProgress, [0, 0.1], [20, 0]);
+
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = [
+    {
+      src: "/smart_bill_book_mobile_app.png",
+      alt: "Smart Bill Book Mobile App",
+      width: "w-64",
+      rotate: "-rotate-3"
+    },
+    {
+      src: "/smart_bill_book_windows.png",
+      alt: "Smart Bill Book Windows App",
+      width: "w-140",
+      rotate: "rotate-3"
+    }
+  ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => {
+        // If current image is mobile (0), show it for 5 seconds
+        // If current image is Windows (1), show it for 3 seconds
+        const nextImage = (prev + 1) % images.length;
+        return nextImage;
+      });
+    }, currentImage === 0 ? 5000 : 3000);
+
+    return () => clearInterval(interval);
+  }, [currentImage]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -47,38 +80,24 @@ export default function Home() {
             style={{ scaleX }}
           />
           {/* Hero Section */}
-          <nav className="bg-white shadow-sm fixed w-full top-0 z-40">
+          <nav className="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-40 border-b border-white/20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
               <div className="flex justify-between items-center">
                 <div className="flex items-center">
                   <img src="/logo.png" alt="Smart Bill Book Logo" className="h-8 w-8" />
-                  <span className="hidden ml-2 text-xl font-bold text-gray-900">Smart Bill Book</span>
+                  <span className="ml-3 text-xl font-bold text-gray-700 tracking-wider">Smart Bill Book</span>
                 </div>
-                <div className="hidden md:flex space-x-8">
-                  <button
-                    onClick={() => scrollToSection('features')}
-                    className="text-gray-600 hover:text-primary transition-colors"
-                  >
-                    Features
-                  </button>
-                  {/* <button
-                    onClick={() => scrollToSection('pricing')}
-                    className="text-gray-600 hover:text-primary transition-colors"
-                  >
-                    Pricing
-                  </button> */}
-                  {/* <button
-                    onClick={() => scrollToSection('testimonials')}
-                    className="text-gray-600 hover:text-primary transition-colors"
-                  >
-                    Testimonials
-                  </button> */}
-                </div>
-                <div className="flex items-center space-x-4">
+                <motion.div
+                  className="flex items-center space-x-4"
+                  style={{
+                    opacity: buttonOpacity,
+                    y: buttonY
+                  }}
+                >
                   <a
                     href="https://apps.microsoft.com/detail/9pkxj10brmpk?mode=direct"
                     target="_blank"
-                    className="flex items-center space-x-2 bg-[#0078D4] text-white px-4 py-2 rounded-lg hover:bg-[#006cbd] transition-colors text-sm"
+                    className="flex items-center space-x-2 bg-[#0078D4] text-white px-4 py-2 rounded-lg hover:bg-[#006cbd] transition-colors text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <Download className="h-4 w-4" />
                     <span>Windows</span>
@@ -86,55 +105,102 @@ export default function Home() {
                   <a
                     href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share"
                     target="_blank"
-                    className="flex items-center space-x-2 bg-[#414141] text-white px-4 py-2 rounded-lg hover:bg-[#2d2d2d] transition-colors text-sm"
+                    className="flex items-center space-x-2 bg-[#414141] text-white px-4 py-2 rounded-lg hover:bg-[#2d2d2d] transition-colors text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                   >
                     <Download className="h-4 w-4" />
                     <span>Android</span>
                   </a>
-                </div>
+                </motion.div>
               </div>
             </div>
           </nav>
 
           <section className="pt-20 pb-32">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <motion.div
-                className="text-center"
-                initial="initial"
-                animate="animate"
-                variants={fadeIn}
-              >
-                <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
-                  Transform Your Billing <br />
-                  <span className="text-primary">Into Digital Magic</span>
-                </h1>
-                <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                  Say goodbye to paper bills. Create, manage, and sync your invoices across all devices with our cloud-based smart billing system.
-                </p>
-                <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-
-                    <a href="https://apps.microsoft.com/detail/9pkxj10brmpk?mode=direct" target="_blank">
-                      <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
+              <div className="flex flex-col md:flex-row items-center justify-between gap-12 mt-10 md:mt-0">
+                <motion.div
+                  className="flex-1 text-left"
+                  initial="initial"
+                  animate="animate"
+                  variants={fadeIn}
+                >
+                  <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                    Transform Your Billing <br />
+                    <span className="text-primary">Into Digital Magic</span>
+                  </h1>
+                  <p className="text-xl text-gray-600 mb-8 max-w-2xl">
+                    Say goodbye to paper bills. Create, manage, and sync your invoices across all devices with our cloud-based smart billing system.
+                  </p>
+                  <div className="flex flex-col sm:flex-row justify-start items-center gap-4">
+                    <a
+                      href="https://apps.microsoft.com/detail/9pkxj10brmpk?mode=direct"
+                      target="_blank"
+                      className="transform transition-all duration-300 hover:scale-110"
+                    >
+                      <img
+                        src="https://get.microsoft.com/images/en-us%20dark.svg"
+                        width="200"
+                        alt="Download from Microsoft Store"
+                        className="transition-all duration-300"
+                      />
                     </a>
 
-                    <a href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share" target="_blank">
-                      <img src="/google_play.png" width="185"/>
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share"
+                      target="_blank"
+                      className="transform transition-all duration-300 hover:scale-110"
+                    >
+                      <img
+                        src="/google_play.png"
+                        width="185"
+                        alt="Download from Google Play"
+                        className="transition-all duration-300"
+                      />
                     </a>
-                </div>
-              </motion.div>
+                  </div>
+                </motion.div>
 
-              <motion.div
-                className="mt-20"
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.8 }}
-              >
-                <img
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80"
-                  alt="Smart Bill Book Dashboard"
-                  className="rounded-2xl shadow-2xl w-full animate-float"
-                />
-              </motion.div>
+                <motion.div
+                  className="flex-1"
+                  initial={{ opacity: 0, x: 40 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.3, duration: 0.8 }}
+                >
+                  <div className="relative flex items-center justify-center" style={{ height: '600px' }}>
+                    <motion.div
+                      key={currentImage}
+                      className={`relative ${images[currentImage].width}`}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.9 }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      <div className={`absolute -inset-4 bg-primary/10 rounded-3xl transform ${images[currentImage].rotate}`}></div>
+                      <motion.img
+                        src={images[currentImage].src}
+                        alt={images[currentImage].alt}
+                        className={`relative rounded-2xl w-full animate-float ${
+                          currentImage === 0 ? 'shadow-[0_25px_60px_rgba(253,141,0,0.35)]' : ''
+                        }`}
+                        animate={{
+                          scale: [1, 1.02, 1],
+                          boxShadow: currentImage === 0 ? [
+                            "0 25px 60px rgba(253,141,0,0.35)",
+                            "0 30px 70px rgba(253,141,0,0.4)",
+                            "0 25px 60px rgba(253,141,0,0.35)"
+                          ] : undefined
+                        }}
+                        transition={{
+                          duration: 3,
+                          ease: "easeInOut",
+                          repeat: Infinity,
+                          repeatType: "reverse"
+                        }}
+                      />
+                    </motion.div>
+                  </div>
+                </motion.div>
+              </div>
             </div>
           </section>
 
@@ -186,7 +252,7 @@ export default function Home() {
                 ].map((feature, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
+                    className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
@@ -222,7 +288,7 @@ export default function Home() {
                   >
                     {stat.icon}
                     <span className="text-4xl font-bold mt-4">{stat.number}</span>
-                    <span className="text-[#ff9f1a]">{stat.label}</span>
+                    <span className="text-[#ffd7a0]">{stat.label}</span>
                   </motion.div>
                 ))}
               </div>
@@ -371,12 +437,19 @@ export default function Home() {
                 <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Billing?</h2>
                 <p className="text-xl text-gray-400 mb-8">Join thousands of businesses that trust Smart Bill Book</p>
                 <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
-
-                    <a href="https://apps.microsoft.com/detail/9pkxj10brmpk?mode=direct" target="_blank">
+                    <a
+                      href="https://apps.microsoft.com/detail/9pkxj10brmpk?mode=direct"
+                      target="_blank"
+                      className="transition-transform hover:scale-105"
+                    >
                       <img src="https://get.microsoft.com/images/en-us%20dark.svg" width="200"/>
                     </a>
 
-                    <a href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share" target="_blank">
+                    <a
+                      href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share"
+                      target="_blank"
+                      className="transition-transform hover:scale-105"
+                    >
                       <img src="/google_play.png" width="185"/>
                     </a>
                 </div>
@@ -425,3 +498,4 @@ export default function Home() {
         </div>
   );
 }
+

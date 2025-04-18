@@ -24,3 +24,53 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: #fd8d00;
+  }
+}
+
+@layer utilities {
+  .text-primary {
+    color: var(--primary);
+  }
+
+  .bg-primary {
+    background-color: var(--primary);
+  }
+
+  .border-primary {
+    border-color: var(--primary);
+  }
+}
+
+/* Custom text selection styling */
+::selection {
+  background-color: rgba(253, 141, 0, 0.2);
+  color: #000;
+}
+
+/* For Firefox */
+::-moz-selection {
+  background-color: rgba(253, 141, 0, 0.2);
+  color: #000;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
