@@ -117,7 +117,7 @@ export default function Home() {
 
           <section className="pt-20 pb-32">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <div className="flex flex-col md:flex-row items-center justify-between gap-12 mt-10 md:mt-0">
+              <div className="flex flex-col md:flex-row items-center justify-between gap-12 mt-10 md:mt-5">
                 <motion.div
                   className="flex-1 text-left"
                   initial="initial"
