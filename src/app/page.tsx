@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import Link from "next/link";
 import { useState, useEffect } from 'react';
+import AppBar from './components/AppBar';
+import Footer from './components/Footer';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -80,7 +82,7 @@ export default function Home() {
             style={{ scaleX }}
           />
           {/* Hero Section */}
-          <nav className="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-40 border-b border-white/20">
+          {/* <nav className="bg-white/80 backdrop-blur-md shadow-sm fixed w-full top-0 z-40 border-b border-white/20">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
               <div className="flex justify-between items-center">
                 <div className="flex items-center">
@@ -113,7 +115,8 @@ export default function Home() {
                 </motion.div>
               </div>
             </div>
-          </nav>
+          </nav> */}
+          <AppBar />
 
           <section className="pt-20 pb-32">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -130,6 +133,10 @@ export default function Home() {
                   </h1>
                   <p className="text-xl text-gray-600 mb-8 max-w-2xl">
                     Say goodbye to paper bills. Create, manage, and sync your invoices across all devices with our cloud-based smart billing system.
+                  </p>
+                  <p className="text-lg text-gray-700 mb-8 flex items-center">
+                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold mr-2">Free</span>
+                    Available on Windows and Android at no cost - download now and start transforming your business!
                   </p>
                   <div className="flex flex-col sm:flex-row justify-start items-center gap-4">
                     <a
@@ -213,7 +220,7 @@ export default function Home() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
               >
-                <h2 className="text-4xl font-bold text-gray-900 mb-4">Powerful Features</h2>
+                <h2 className="text-4xl font-bold text-gray-900 mb-4"><span className="text-[#fd8d00]">Powerful</span> Features</h2>
                 <p className="text-xl text-gray-600">Everything you need to manage your billing efficiently</p>
               </motion.div>
 
@@ -274,8 +281,8 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid md:grid-cols-3 gap-8 text-white text-center">
                 {[
-                  { icon: <Zap className="h-8 w-8" />, number: "1M+", label: "Bills Generated" },
-                  { icon: <Users className="h-8 w-8" />, number: "200+", label: "Happy Users" },
+                  { icon: <Zap className="h-8 w-8" />, number: "2K+", label: "Bills Generated" },
+                  { icon: <Users className="h-8 w-8" />, number: "150+", label: "Happy Users" },
                   { icon: <Cloud className="h-8 w-8" />, number: "99.9%", label: "Uptime" }
                 ].map((stat, index) => (
                   <motion.div
@@ -458,7 +465,8 @@ export default function Home() {
           </section>
 
           {/* Footer */}
-          <footer className="bg-gray-900 text-white py-12">
+          <Footer />
+          {/* <footer className="bg-gray-900 text-white py-12">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
@@ -494,7 +502,7 @@ export default function Home() {
                 <p>&copy; {new Date().getFullYear()} Smart Bill Book. All rights reserved.</p>
               </div>
             </div>
-          </footer>
+          </footer> */}
         </div>
   );
 }
