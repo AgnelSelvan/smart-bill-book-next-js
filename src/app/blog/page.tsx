@@ -17,6 +17,13 @@ const blogs = [
     summary: "Discover how Smart Bill Book can transform your billing process and streamline your business operations with its powerful features and user-friendly interface.",
     date: "March 20, 2024",
     thumbnail: "/why_smart_bill_book.png"
+  },
+  {
+    slug: "offline-support",
+    title: "Never Stop Your Business: Smart Bill Book's Offline Support",
+    summary: "Learn how Smart Bill Book keeps your business running smoothly even without internet connectivity, with automatic synchronization when you're back online.",
+    date: "March 21, 2024",
+    thumbnail: "/offline_support.png"
   }
   // Add more blog posts here
 ];
