@@ -1,0 +1,13 @@
+[
+    {
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.smartbillbook.app",
+        "sha256_cert_fingerprints":
+          ["E6:C9:D5:34:32:54:60:12:F0:23:8E:3E:49:BB:1D:F5:7C:6F:7B:CC:46:2F:CE:DD:84:F3:E9:8B:90:AC:68:74",
+        "BE:34:05:F3:76:9A:B8:DB:0F:A6:DC:A7:49:8D:4D:77:C1:73:E9:27:8D:A6:96:AA:A8:BC:AF:43:B0:7B:3C:71",
+        "B5:07:03:B6:99:42:45:C3:D3:83:2A:EC:E6:4B:DC:44:B8:85:45:23:DC:F7:A6:07:64:12:D0:3A:E8:08:90:3B"]
+      }
+    }
+  ]
