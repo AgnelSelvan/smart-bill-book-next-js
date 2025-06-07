@@ -106,7 +106,7 @@ export default function Home() {
                     <span>Windows</span>
                   </a>
                   <a
-                    href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share"
+                    href="https://smartbillbook.onelink.me/RkYa/96yotwdr"
                     target="_blank"
                     className="flex items-center space-x-2 bg-[#414141] text-white px-4 py-2 rounded-lg hover:bg-[#2d2d2d] transition-colors text-sm shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-300"
                   >
@@ -173,7 +173,7 @@ export default function Home() {
                     </a>
 
                     <a
-                      href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share"
+                      href="https://smartbillbook.onelink.me/RkYa/96yotwdr"
                       target="_blank"
                       className="transform transition-all duration-300 hover:scale-110"
                     >
@@ -530,7 +530,7 @@ export default function Home() {
                     </a>
 
                     <a
-                      href="https://play.google.com/store/apps/details?id=com.smartbillbook.app&pcampaignid=web_share"
+                      href="https://smartbillbook.onelink.me/RkYa/96yotwdr"
                       target="_blank"
                       className="transition-transform hover:scale-105"
                     >
