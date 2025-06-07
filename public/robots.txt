@@ -9,6 +9,3 @@ Sitemap: https://smartbillbook.com/sitemap.xml
 Disallow: /api/
 Disallow: /admin/
 Disallow: /private/
-
-# Crawl-delay for all bots
-Crawl-delay: 10
