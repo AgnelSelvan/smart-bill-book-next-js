@@ -28,7 +28,7 @@ export default function AppBar() {
               <span className="ml-3 text-xl font-bold tracking-wide">Smart<span className="text-[#fd8d00]"> Bill Book</span></span>
             </Link>
             <motion.div
-              className="flex items-center space-x-4"
+              className="hidden md:flex items-center space-x-4"
               style={{
                 opacity: buttonOpacity,
                 y: buttonY
