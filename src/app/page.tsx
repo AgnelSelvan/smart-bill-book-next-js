@@ -14,7 +14,8 @@ import {
   Download,
   CloudOff,
   ReceiptText,
-  ShoppingCart
+  ShoppingCart,
+  Calendar1
 } from 'lucide-react';
 import Link from "next/link";
 import { useState, useEffect } from 'react';
@@ -117,6 +118,25 @@ export default function Home() {
             </div>
           </nav> */}
           <AppBar />
+
+          {/* Floating Book A Call Button */}
+          <motion.div
+            className="fixed bottom-8 right-8 z-50"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1 }}
+          >
+            <motion.a
+              href="https://calendly.com/smartbillbook/demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white text-base font-medium rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
+
+            >
+              Book A Call
+              <Calendar1 className="ml-2 h-5 w-5" />
+            </motion.a>
+          </motion.div>
 
           <section className="pt-20 pb-32">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -431,6 +451,63 @@ export default function Home() {
               </div>
             </div>
           </section> */}
+
+          {/* Schedule Demo Section */}
+          <section className="py-20 bg-gradient-to-b from-white to-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <motion.div
+                className="text-center mb-16"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">See Smart Bill Book in Action</h2>
+                <p className="text-xl text-gray-600">Schedule a personalized demo and discover how Smart Bill Book can transform your business</p>
+              </motion.div>
+
+              <motion.div
+                className="max-w-3xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.2 }}
+              >
+                <div className="p-8 md:p-12">
+                  <div className="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                      <h3 className="text-2xl font-semibold text-gray-900 mb-4">Book Your Demo Call</h3>
+                      <ul className="space-y-4 mb-8">
+                        <li className="flex items-start">
+                          <Check className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-1" />
+                          <span className="text-gray-600">Personalized walkthrough of features</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-1" />
+                          <span className="text-gray-600">Q&A session with our experts</span>
+                        </li>
+                        <li className="flex items-start">
+                          <Check className="h-6 w-6 text-primary mr-3 flex-shrink-0 mt-1" />
+                          <span className="text-gray-600">Custom solutions for your business</span>
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="text-center">
+                      <a
+                        href="https://calendly.com/smartbillbook/demo"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center px-8 py-4 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-primary/90 transition-colors duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1"
+                      >
+                        Schedule Demo
+                        <Calendar1 className="ml-2 h-5 w-5" />
+                      </a>
+                      <p className="mt-4 text-sm text-gray-500">45-minute call • No commitment required</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+          </section>
 
           {/* CTA Section */}
           <section className="py-20">
