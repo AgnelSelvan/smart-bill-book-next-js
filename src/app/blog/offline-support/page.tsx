@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import AppBar from "@/app/components/AppBar";
 import Footer from "@/app/components/Footer";
 import { CloudOff, Cloud, Zap } from 'lucide-react';
-import Head from 'next/head';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -15,22 +14,8 @@ const fadeIn = {
 export default function OfflineSupport() {
   return (
     <>
-      <Head>
-        <title>Best Free Offline Billing Software for Small Business | Smart Bill Book</title>
-        <meta name="description" content="Discover Smart Bill Book - the best free offline billing software for small business. Create GST-compliant invoices, manage inventory, and track sales without internet. Download now!" />
-        <meta name="keywords" content="offline billing software, free offline billing software for small business, offline invoice software, offline gst billing software, free billing software for pc offline, offline billing software for retail shop" />
-        <meta property="og:title" content="Best Free Offline Billing Software for Small Business | Smart Bill Book" />
-        <meta property="og:description" content="Create GST-compliant invoices offline. The most reliable free offline billing software for retail shops and small businesses. Download now!" />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="/offline_support.png" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Best Free Offline Billing Software for Small Business | Smart Bill Book" />
-        <meta name="twitter:description" content="Create GST-compliant invoices offline. The most reliable free offline billing software for retail shops and small businesses. Download now!" />
-        <meta name="twitter:image" content="/offline_support.png" />
-        <link rel="canonical" href="https://smartbillbook.com/blog/offline-support" />
-      </Head>
       <AppBar />
-      <main className="max-w-4xl mx-auto px-4 py-8 mt-24">
+      <div className="max-w-4xl mx-auto px-4 py-8 mt-24">
 
         <article>
           <header>
@@ -172,7 +157,7 @@ export default function OfflineSupport() {
             </motion.div>
           </section>
         </article>
-      </main>
+      </div>
       <Footer />
     </>
   );

@@ -134,8 +134,8 @@ export default function Home() {
                   <p className="text-xl text-gray-600 mb-8 max-w-2xl">
                     Say goodbye to paper bills. Create, manage, and sync your invoices across all devices with our cloud-based smart billing system.
                   </p>
-                  <p className="text-lg text-gray-700 mb-8 flex items-center">
-                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full font-semibold mr-2">Free</span>
+                  <p className="text-sm text-gray-700 mb-8 flex items-center">
+                    <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-xs font-semibold mr-2">Free</span>
                     Available on Windows and Android at no cost - download now and start transforming your business!
                   </p>
                   <div className="flex flex-col sm:flex-row justify-start items-center gap-4">
@@ -281,8 +281,8 @@ export default function Home() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className="grid md:grid-cols-3 gap-8 text-white text-center">
                 {[
-                  { icon: <Zap className="h-8 w-8" />, number: "2K+", label: "Bills Generated" },
-                  { icon: <Users className="h-8 w-8" />, number: "150+", label: "Happy Users" },
+                  { icon: <Zap className="h-8 w-8" />, number: "3K+", label: "Bills Generated" },
+                  { icon: <Users className="h-8 w-8" />, number: "190+", label: "Happy Users" },
                   { icon: <Cloud className="h-8 w-8" />, number: "99.9%", label: "Uptime" }
                 ].map((stat, index) => (
                   <motion.div

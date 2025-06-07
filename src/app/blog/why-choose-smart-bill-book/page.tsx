@@ -3,7 +3,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import AppBar from "@/app/components/AppBar";
 import Footer from "@/app/components/Footer";
-import Head from 'next/head';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -14,16 +13,6 @@ const fadeIn = {
 export default function WhyChooseSmartBillBook() {
   return (
     <>
-      <Head>
-        <title>Best GST Billing Software & Invoice App for Retail Shops | Smart Bill Book</title>
-        <meta name="description" content="Smart Bill Book - Complete retail billing software & GST invoice app. Generate online invoices, manage inventory & create GST bills. Best billing software for small business." />
-        <meta name="keywords" content="billing software, generate online invoice, bill app, billing software for retail shop, retail billing software, retail store billing software, my bill book app, invoice billing software, invoice bill software, billing software free, invoicing software for small business, billing software for small business, gst billing software, gst software, gst invoice software, gst invoice billing software, billing app" />
-        <meta property="og:title" content="Best GST Billing Software & Invoice App for Retail Shops | Smart Bill Book" />
-        <meta property="og:description" content="Complete retail billing software & GST invoice app. Generate online invoices, manage inventory & create GST bills. Best billing software for small business." />
-        <meta property="og:type" content="article" />
-        <meta property="og:image" content="/why_smart_bill_book.png" />
-        <link rel="canonical" href="https://smartbillbook.com/blog/why-choose-smart-bill-book" />
-      </Head>
       <AppBar />
       <div className="max-w-4xl mx-auto px-4 py-8 mt-24">
         <Link href="/blog" className="text-blue-500 hover:underline">&larr; Back to Blog</Link>
